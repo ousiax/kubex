@@ -22,6 +22,11 @@ spec:
             operator: In
             values:
               - local
+  # claimRef:
+  #   apiVersion: v1
+  #   kind: PersistentVolumeClaim
+  #   name: prometheus-storage
+  #   namespace: metrics
 
 ---
 apiVersion: v1
