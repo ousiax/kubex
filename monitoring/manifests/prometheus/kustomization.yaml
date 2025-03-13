@@ -1,15 +1,17 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: metrics
-commonLabels:
-  app.kubernetes.io/part-of: metrics
 resources:
-  - manifests/rbac.yaml
-  - manifests/deployment.yaml
-  - manifests/service.yaml
+- manifests/rbac.yaml
+- manifests/deployment.yaml
+- manifests/service.yaml
 configMapGenerator:
-  - name: prometheus-configuration
-    files:
-      - manifests/config/prometheus.yaml
+- files:
+  - manifests/config/prometheus.yaml
+  name: prometheus-configuration
 generatorOptions:
   disableNameSuffixHash: true
+labels:
+- includeSelectors: true
+  pairs:
+    app.kubernetes.io/part-of: metrics

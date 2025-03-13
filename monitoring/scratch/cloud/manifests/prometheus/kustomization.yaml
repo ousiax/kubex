@@ -3,6 +3,6 @@ resources:
   - ../../../../manifests/prometheus
   - manifests/ingress.yaml
 patches:
-  - manifests/deployment-args.yaml
-  - manifests/deployment-resources.yaml
-  - manifests/deployment-volumes.yaml
+  - path: manifests/deployment-args.yaml
+  - path: manifests/deployment-resources.yaml
+  - path: manifests/deployment-volumes.yaml
